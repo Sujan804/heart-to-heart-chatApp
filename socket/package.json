@@ -1,0 +1,15 @@
+{
+  "name": "socket",
+  "version": "1.0.0",
+  "main": "socket.js",
+  "author": "Sujan804",
+  "scripts": {
+    "socket": "nodemon socket.js"
+  },
+  "dependencies": {
+    "socket.io": "^4.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
