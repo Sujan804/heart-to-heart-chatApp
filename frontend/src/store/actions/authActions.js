@@ -23,7 +23,10 @@ export const userRegiser = (data) => {
 
       dispatch({
         type: REGISTER_SUCCESS,
-        payload: { successMessage: response.data.successMessage },
+        payload: {
+          successMessage: response.data.successMessage,
+          token: response.data.token,
+        },
       });
     } catch (error) {
       dispatch({
