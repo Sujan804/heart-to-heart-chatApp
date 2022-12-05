@@ -1,6 +1,21 @@
-export const REGISTER_FAIL = "REGISTER_FAIL";
-export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
-export const SUCCESS_MESSAGE_CLEAR = "SUCCESS_MESSAGE_CLEAR";
-export const USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS";
-export const USER_LOGIN_FAIL = "USER_LOGIN_FAIL";
-export const ERROR_CLEAR = "ERROR_CLEAR";
+import { createStore,compose,combineReducers,applyMiddleware } from "redux";
+
+import thunkMiddleware from 'redux-thunk';
+
+import { authReducer } from "./reducers/authReducer";
+import { messengerReducer } from "./reducers/messengerReducer";
+
+const rootReducer = combineReducers({
+    auth : authReducer,
+    messenger: messengerReducer
+})
+
+
+const middleware = [thunkMiddleware];
+
+const store = createStore(rootReducer,compose(
+   applyMiddleware(...middleware),
+   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+));
+
+export default store;

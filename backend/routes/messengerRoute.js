@@ -1,7 +1,7 @@
 const {
   getFriends,
   messageGet,
-  messageUplodaDB,
+  messageUploadDB,
   messageSeen,
   ImageMessageSend,
   deliverdMessage,
@@ -11,7 +11,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const router = require("express").Router();
 
 router.get("/get-friends", authMiddleware, getFriends);
-router.post("/send-message", authMiddleware, messageUplodaDB);
+router.post("/send-message", authMiddleware, messageUploadDB);
 router.get("/get-message/:id", authMiddleware, messageGet);
 router.post("/image-message-send", authMiddleware, ImageMessageSend);
 router.post("/seen-message", authMiddleware, messageSeen);

@@ -4,9 +4,6 @@ const messageModel = require("../models/messageModel");
 const fs = require("fs");
 
 const getLastMessage = async (myId, fdId) => {
-  res.status(200).json({
-    Hi: "HHello user! You are logged In",
-  });
   const msg = await messageModel
     .findOne({
       $or: [
@@ -69,7 +66,7 @@ const getFriends = async (req, res) => {
     });
   }
 };
-const messageUplodaDB = async (req, res) => {
+const messageUploadDB = async (req, res) => {
   const { senderName, receverId, message } = req.body;
   const senderId = req.myId;
   try {
@@ -234,6 +231,6 @@ module.exports = {
   messageSeen,
   ImageMessageSend,
   messageGet,
-  messageUplodaDB,
+  messageUploadDB,
   deliverdMessage,
 };
